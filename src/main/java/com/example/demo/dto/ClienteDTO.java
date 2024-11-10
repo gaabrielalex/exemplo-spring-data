@@ -1,37 +1,23 @@
-package com.example.demo.model;
+package com.example.demo.dto;
 
-import jakarta.persistence.*;
 import java.util.Date;
 
-@Entity
-@Table(name = "pessoas")
-public class Pessoa {
+public class ClienteDTO {
 
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
-    @Column(name = "nome", length = 100, nullable = false)
+    private Long pessoaId;
     private String nome;
-
-    @Column(name = "cpf", length = 14, unique = true, nullable = false)
     private String cpf;
-
-    @Column(name = "data_nascimento")
-    @Temporal(TemporalType.DATE)
     private Date dataNascimento;
-
-    
-    @Column(name = "mae", length = 100, nullable = false)
     private String mae;
+    private Date dataDeCadastro;
+    private String status;
 
-    public Integer getId() {
-        return id;
+    public Long getPessoaId() {
+        return pessoaId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setPessoaId(Long pessoaId) {
+        this.pessoaId = pessoaId;
     }
 
     public String getNome() {
@@ -66,5 +52,20 @@ public class Pessoa {
         this.mae = mae;
     }
 
+    public Date getDataDeCadastro() {
+        return dataDeCadastro;
+    }
+
+    public void setDataDeCadastro(Date dataDeCadastro) {
+        this.dataDeCadastro = dataDeCadastro;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }
 
