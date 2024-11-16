@@ -12,7 +12,7 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToOne // ou @ManyToOne, dependendo do seu design
+    @OneToOne
     @JoinColumn(name = "pessoas_id", referencedColumnName = "id")
     private Pessoa pessoa;
 
@@ -23,6 +23,7 @@ public class Cliente {
     @Column(name = "status", length = 10)
     private String status;
 
+    // Getters and Setters
     public Integer getId() {
         return id;
     }

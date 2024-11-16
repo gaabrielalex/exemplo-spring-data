@@ -11,7 +11,7 @@ public class Aluno {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToOne // ou @ManyToOne, dependendo do seu design
+    @OneToOne
     @JoinColumn(name = "pessoas_id", referencedColumnName = "id")
     private Pessoa pessoa;
 
@@ -21,6 +21,7 @@ public class Aluno {
     @Column(name = "ano_ingresso", nullable = false)
     private Integer anoIngresso;
 
+    // Getters and Setters
     public Integer getId() {
         return id;
     }
